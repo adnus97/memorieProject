@@ -10,9 +10,7 @@ import { PostDetails } from "./components/PostDetails/PostDetails";
 function App() {
   const [logOutState, setLogoutState] = useState(false);
   const user = JSON.parse(localStorage.getItem("profile"));
-  console.log(user);
   const objectLength = user == null ? user : null;
-  console.log(objectLength);
   return (
     <GoogleOAuthProvider
       clientId={import.meta.env.VITE_NEXT_PUBLIC_GOOGLE_API_TOKEN}

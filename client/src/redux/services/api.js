@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { baseUrl } from "../../constant";
 
 export const myApi = createApi({
   reducerPath: "myApi",
   tagTypes: ["Post"],
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5174",
+    baseUrl,
     prepareHeaders: (headers) => {
       if (localStorage.getItem("profile")) {
         headers.set(

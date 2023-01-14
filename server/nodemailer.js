@@ -28,7 +28,7 @@ export const sendConfirmationCode = (email, activationCode) => {
     },
     (error, info) => {
       if (error) {
-        return console.log(error);
+        return console.error(error);
       }
       console.log("Message sent: %s", info.messageId);
     }

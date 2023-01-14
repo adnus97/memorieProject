@@ -18,10 +18,8 @@ const Form = forwardRef(({ currentId, setCurrentId }, ref) => {
 
   const navigate = useNavigate();
   const { posts } = useSelector((state) => state.posts);
-
   const post = currentId ? posts.find((p) => p._id === currentId) : null;
   const dispatch = useDispatch();
-
   const [postData, setPostData] = useState({
     title: "",
     message: "",
@@ -50,7 +48,7 @@ const Form = forwardRef(({ currentId, setCurrentId }, ref) => {
           navigate(`/posts/${addedId}`);
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
     }
     clear();

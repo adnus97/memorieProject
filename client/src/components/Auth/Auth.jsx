@@ -37,7 +37,7 @@ export const Auth = () => {
       dispatch(getUser(decoded));
       navigate("/");
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
   const googleFailure = (err) => console.log(err);
