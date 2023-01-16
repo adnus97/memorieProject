@@ -6,8 +6,14 @@ import { Auth } from "./components/Auth/Auth";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { useState } from "react";
 import { PostDetails } from "./components/PostDetails/PostDetails";
+import { globalCss } from "../src/stiches.theme";
+
+const globalStyles = globalCss({
+  body: { backgroundColor: "#f7f8fc" },
+});
 
 function App() {
+  globalStyles();
   const [logOutState, setLogoutState] = useState(false);
   const user = JSON.parse(localStorage.getItem("profile"));
   const objectLength = user == null ? user : null;
