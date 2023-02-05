@@ -12,9 +12,9 @@ export const signin = async (req, res) => {
     if (!result) {
       return res.status(404).json({ message: "User doesn't exist." });
     }
-    if (!status) {
-      return res.status(400).json({ message: "Account not confirmed" });
-    }
+    // if (!status) {
+    //   return res.status(400).json({ message: "Account not confirmed" });
+    // }
     const isPasswordCorrect = await bcrypt.compare(password, result.password);
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
